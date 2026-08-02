@@ -38,8 +38,25 @@ body {
     align-items: center;
 }
 
+#player-body {
+    display: flex;
+    flex-direction: column;
+}
+
+#controls {
+    display: flex;
+}
+
 #seven-segment {
     display: flex;
+}
+
+#cd-tray {
+    width: 100%;
+}
+
+#volume-knob {
+
 }
 
 .digit {
