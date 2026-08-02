@@ -69,7 +69,7 @@ body {
 .segment {
     display: block;
     position: relative;
-    background-color: rgba(255, 0, 0, 70%);
+    background-color: rgba(255, 0, 0, 40%);
 }
 
 .segment.vertical {
