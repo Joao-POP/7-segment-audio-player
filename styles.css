@@ -22,6 +22,12 @@
     initial-value: calc(5px + 3vw);
 }
 
+@property --button-diameter {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: calc(2px + 2vw);
+}
+
 html {
     min-height: 100%;
 
@@ -57,6 +63,17 @@ body {
 
 #volume-knob {
 
+}
+
+#button-array {
+    display: grid;
+    width: var(--button-diameter);
+    align-items: center;
+}
+
+#button-array > button {
+    border-radius: 100%;
+    height: var(--button-diameter);
 }
 
 .digit {
