@@ -59,10 +59,11 @@ body {
 
 #cd-tray {
     width: 100%;
+    outline: 1px solid blue;
 }
 
 #volume-knob {
-
+    opacity: 0;
 }
 
 #button-array {
