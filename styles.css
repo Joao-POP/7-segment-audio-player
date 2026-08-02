@@ -1,3 +1,27 @@
+@property --vertical-segment-height {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: calc(5px + 3vw);
+}
+
+@property --vertical-segment-width {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: calc(1px + 1vw);
+}
+
+@property --horizontal-segment-height {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: calc(1px + 1vw);
+}
+
+@property --horizontal-segment-width {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: calc(5px + 3vw);
+}
+
 html {
     min-height: 100%;
 
@@ -14,14 +38,52 @@ body {
     align-items: center;
 }
 
-.segment {
+#seven-segment {
+    display: flex;
+}
+
+.digit {
+    height: calc(2 * var(--vertical-segment-height) + 3 * var(--horizontal-segment-height));
+    width: calc(2 * var(--vertical-segment-width) + var(--horizontal-segment-width));
     background-color: black;
+    padding: calc(1px + 0.5vw);
+}
+
+.segment {
+    display: block;
+    position: relative;
+    background-color: rgba(255, 0, 0, 70%);
+}
+
+.segment.vertical {
+    width: var(--vertical-segment-width);
+    height: var(--vertical-segment-height);
 }
 
 .segment.horizontal {
-    transform: rotate(90deg);
+    width: var(--horizontal-segment-width);
+    height: var(--horizontal-segment-height);
 }
 
+.A, .G, .D {
+    left: var(--vertical-segment-width);
+}
+
+.D, .C {
+    top: var(--horizontal-segment-height);
+}
+
+.B, .C {
+    left: calc(var(--horizontal-segment-width) + var(--vertical-segment-width));
+}
+
+.E {
+    bottom: var(--vertical-segment-height);
+}
+
+.F, .G {
+    bottom: calc(var(--vertical-segment-height) * 3 + var(--horizontal-segment-height));
+}
 .segment.lit {
     background-color: red;
 }
